@@ -22,11 +22,11 @@ class class_file {
     u2 interfaces_count;
     std::vector<u2> interfaces;
     u2 fields_count;
-    field_info fields[fields_count];
+    //field_info fields[fields_count];
     u2 methods_count;
-    method_info methods[methods_count];
+    //method_info methods[methods_count];
     u2 attributes_count;
-    attribute_info attributes[attribute_count];
+    //attribute_info attributes[attribute_count];
 };
 
 

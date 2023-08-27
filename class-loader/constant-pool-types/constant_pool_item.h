@@ -6,7 +6,9 @@
 #define LEGOSHIVM_CONSTANT_POOL_ITEM_H
 
 
-class constant_pool_item {
+#include "../utility/abstract_data.h"
+
+class constant_pool_item : public abstract_data {
 
 };
 

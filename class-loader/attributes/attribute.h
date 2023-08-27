@@ -8,8 +8,9 @@
 
 #include <vector>
 #include "../../vm/base/def.h"
+#include "../utility/abstract_data.h"
 
-class attribute {
+class attribute : public abstract_data {
 protected:
     u2 attribute_name;
     u4 attribute_length;
