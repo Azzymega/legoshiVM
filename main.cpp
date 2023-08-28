@@ -13,5 +13,6 @@ int main()
     class_machine machine = class_machine();
     file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
     std::cout<< static_cast<constant_utf8_info*>(file.constant_pool[3])->string->c_str()<<std::endl;
+    std::cout<< static_cast<constant_utf8_info*>(file.constant_pool[32])->string->c_str()<<std::endl;
     return 0;
 }

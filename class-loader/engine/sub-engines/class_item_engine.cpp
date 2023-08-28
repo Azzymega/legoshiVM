@@ -82,6 +82,7 @@ abstract_data *class_item_engine::perform_analyzing(loader *loader) {
             return info;
         }
         default:{
+            loader->set_bytes_amount(loader->return_bytes()-1);
             *size-=1;
             return nullptr;
         }

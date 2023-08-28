@@ -56,3 +56,11 @@ u4 loader::init_u4() {
     loaded_bytes += sizeof(u4);
     return temp[0] >> 24 | temp[1] >> 16 | temp[2] >> 8 | temp[3];
 }
+
+void loader::set_bytes_amount(u4 bytes) {
+    this->loaded_bytes = bytes;
+}
+
+u4 loader::return_bytes() const {
+    return loaded_bytes;
+}

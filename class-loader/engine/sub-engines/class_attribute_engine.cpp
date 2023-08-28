@@ -74,6 +74,7 @@ abstract_data *class_attribute_engine::perform_analyzing(loader *loader) {
             auto* file = new local_variable_table_attr();
             file->resolve_name(attribute_name_index);
             file->resolve_length(attribute_length);
+            file->local_variable_table_length = loader->init_u2();
             for (int i = 0; i < file->local_variable_table_length; ++i) {
                 file->local_variable_table.push_back(*static_cast<class local_variable_table*>(class_local_variable_table_engine.perform_analyzing(loader)));
             }

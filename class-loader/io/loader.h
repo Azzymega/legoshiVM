@@ -18,6 +18,8 @@ private:
     std::ifstream load_stream;
     std::vector<u1> bytecode;
 public:
+    void set_bytes_amount(u4 bytes);
+    u4 return_bytes() const;
     explicit loader(std::string path);
     void load();
     void load_bytecode(void* dest, u4 length); // legacy, unsafe
