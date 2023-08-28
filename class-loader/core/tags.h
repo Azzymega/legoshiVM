@@ -20,4 +20,27 @@ enum CONSTANT_POOL_TAGS {
     CONSTANT_Unicode = 2
 };
 
+enum attributes {
+    constant_value,
+    code,
+    stack_map_table,
+    exceptions,
+    inner_classes,
+    enclosing_method,
+    synthetic,
+    signature,
+    source_file,
+    source_debug_extension,
+    line_number_table,
+    local_variable_table,
+    local_variable_type_table,
+    deprecated,
+    runtime_visible_annotations,
+    runtime_invisible_annotations,
+    runtime_visible_parameter_annotations,
+    runtime_invisible_parameter_annotations,
+    annotation_default,
+    bootstrap_method
+};
+
 #endif //LEGOSHIVM_TAGS_H

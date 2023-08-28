@@ -10,7 +10,8 @@
 #include "../vm/base/def.h"
 #include "constant-pool-types/constant_pool_item.h"
 
-class class_file {
+class class_file : public abstract_data{
+public:
     u4 magic;
     u2 minor_version;
     u2 major_version;

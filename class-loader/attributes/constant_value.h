@@ -11,6 +11,8 @@
 class constant_value : public attribute {
 protected:
     u2 const_value_index;
+public:
+    void resolve_value_index(u2 data);
 };
 
 

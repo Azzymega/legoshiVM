@@ -10,7 +10,8 @@
 #include "../../vm/base/def.h"
 #include "../attributes/attribute.h"
 
-class methods {
+class methods : public abstract_data{
+public:
     u2 access_flags;
     u2 name_index;
     u2 signature_index;

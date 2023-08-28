@@ -7,8 +7,10 @@
 
 
 #include "../../vm/base/def.h"
+#include "../attributes/attribute.h"
 
-class exception_table {
+class exception_table : public abstract_data {
+public:
     u2 start_pc;
     u2 end_pc;
     u2 handler_pc;

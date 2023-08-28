@@ -9,6 +9,7 @@
 #include "../../vm/base/def.h"
 
 class constant_double_info : public constant_pool_item {
+public:
     u4 high_bytes;
     u4 low_bytes;
 };

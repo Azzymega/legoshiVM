@@ -16,6 +16,9 @@ protected:
     u4 attribute_length;
 private:
     std::vector<u1> info;
+public:
+    void resolve_name(u2 data);
+    void resolve_length(u4 data);
 };
 
 

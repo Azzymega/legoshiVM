@@ -9,6 +9,7 @@
 #include "constant_pool_item.h"
 
 class constant_long_info : public constant_pool_item {
+public:
     u4 high_bytes;
     u4 low_bytes;
 };

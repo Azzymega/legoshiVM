@@ -11,7 +11,8 @@
 #include "../core/exception_table.h"
 #include "attribute.h"
 
-class code {
+class code : public attribute {
+public:
     u2 max_stack;
     u2 max_locals;
     u4 code_length;

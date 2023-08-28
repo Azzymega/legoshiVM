@@ -26,4 +26,37 @@ add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
         class-loader/constant-pool-types/constant_long_info.h class-loader/constant-pool-types/constant_method_handle_info.h
         class-loader/constant-pool-types/constant_method_ref_info.h class-loader/constant-pool-types/constant_method_type_info.h
         class-loader/constant-pool-types/constant_name_and_type_info.h class-loader/constant-pool-types/constant_string_info.h
-        class-loader/constant-pool-types/constant_utf8_info.h class-loader/constant-pool-types/constant_pool_item.cpp class-loader/constant-pool-types/constant_pool_item.h class-loader/attributes/attribute.cpp class-loader/attributes/attribute.h class-loader/attributes/source_file.cpp class-loader/attributes/source_file.h class-loader/attributes/constant_value.cpp class-loader/attributes/constant_value.h class-loader/core/exception_table.h class-loader/attributes/code.cpp class-loader/attributes/code.h class-loader/field-method/field.cpp class-loader/field-method/field.h class-loader/field-method/methods.cpp class-loader/field-method/methods.h class-loader/attribute_factory.cpp class-loader/attribute_factory.h class-loader/engine/class_machine.cpp class-loader/engine/class_machine.h class-loader/utility/class_metadata.cpp class-loader/utility/class_metadata.h class-loader/io/loader.cpp class-loader/io/loader.h class-loader/engine/sub-engines/class_mt_engine.cpp class-loader/engine/sub-engines/class_mt_engine.h class-loader/utility/abstract_data.cpp class-loader/utility/abstract_data.h class-loader/engine/abstract_engine.cpp class-loader/engine/abstract_engine.h)
+        class-loader/constant-pool-types/constant_utf8_info.h class-loader/constant-pool-types/constant_pool_item.cpp
+        class-loader/constant-pool-types/constant_pool_item.h class-loader/attributes/attribute.cpp
+        class-loader/attributes/attribute.h class-loader/attributes/source_file.cpp class-loader/attributes/source_file.h
+        class-loader/attributes/constant_value.cpp class-loader/attributes/constant_value.h
+        class-loader/core/exception_table.h class-loader/attributes/code.cpp class-loader/attributes/code.h
+        class-loader/field-method/field.cpp class-loader/field-method/field.h class-loader/field-method/methods.cpp
+        class-loader/field-method/methods.h class-loader/attribute_factory.cpp class-loader/attribute_factory.h
+        class-loader/engine/class_machine.cpp class-loader/engine/class_machine.h class-loader/utility/class_metadata.cpp
+        class-loader/utility/class_metadata.h class-loader/io/loader.cpp class-loader/io/loader.h
+        class-loader/engine/sub-engines/class_mt_engine.cpp class-loader/engine/sub-engines/class_mt_engine.h
+        class-loader/utility/abstract_data.cpp class-loader/utility/abstract_data.h
+        class-loader/engine/abstract_engine.cpp class-loader/engine/abstract_engine.h
+        class-loader/utility/class_constant_pool.cpp class-loader/utility/class_constant_pool.h
+        class-loader/engine/sub-engines/class_const_pool_engine.cpp
+        class-loader/engine/sub-engines/class_const_pool_engine.h
+        class-loader/engine/sub-engines/class_item_engine.cpp
+        class-loader/engine/sub-engines/class_item_engine.h
+        class-loader/attributes/exceptions.cpp class-loader/attributes/exceptions.h
+        class-loader/core/line_number_table.cpp class-loader/core/line_number_table.h
+        class-loader/attributes/line_number_table_attr.cpp class-loader/attributes/line_number_table_attr.h
+        class-loader/core/local_variable_table.cpp class-loader/core/local_variable_table.h
+        class-loader/attributes/local_variable_table_attr.cpp class-loader/attributes/local_variable_table_attr.h
+        class-loader/engine/sub-engines/class_attribute_engine.cpp
+        class-loader/engine/sub-engines/class_attribute_engine.h
+        class-loader/engine/sub-engines/class_exception_table_engine.cpp
+        class-loader/engine/sub-engines/class_exception_table_engine.h
+        class-loader/engine/sub-engines/class_line_number_table_engine.cpp
+        class-loader/engine/sub-engines/class_line_number_table_engine.h
+        class-loader/engine/sub-engines/class_local_variable_table_engine.cpp
+        class-loader/engine/sub-engines/class_local_variable_table_engine.h
+        class-loader/engine/sub-engines/class_field_engine.cpp
+        class-loader/engine/sub-engines/class_field_engine.h
+        class-loader/engine/sub-engines/class_method_engine.cpp
+        class-loader/engine/sub-engines/class_method_engine.h)

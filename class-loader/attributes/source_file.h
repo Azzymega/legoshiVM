@@ -11,6 +11,8 @@
 class source_file : public attribute {
 protected:
     u2 source_file_index;
+public:
+    void resolve_file_index(u2 data);
 };
 
 

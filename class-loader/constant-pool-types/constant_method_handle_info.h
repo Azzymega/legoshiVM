@@ -9,6 +9,7 @@
 #include "../../vm/base/def.h"
 
 class constant_method_handle_info : public constant_pool_item {
+public:
     u1 reference_kind;
     u2 reference_index;
 };

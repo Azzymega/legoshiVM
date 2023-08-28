@@ -9,6 +9,7 @@
 #include "../../vm/base/def.h"
 
 class constant_interface_method_ref_info : public constant_pool_item {
+public:
     u2 class_index;
     u2 name_and_type_index;
 };

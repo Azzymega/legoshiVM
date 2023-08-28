@@ -10,6 +10,7 @@
 #include "../../vm/base/def.h"
 
 class constant_float_info : public constant_pool_item {
+public:
     u4 bytes;
 };
 #endif //JET_CONSTANT_FLOAT_INFO_H

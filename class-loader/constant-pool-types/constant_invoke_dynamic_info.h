@@ -9,6 +9,7 @@
 #include "../../vm/base/def.h"
 
 class constant_invoke_dynamic_info : public constant_pool_item {
+public:
     u2 bootstrap_method_attr_index;
     u2 name_and_type_index;
 };

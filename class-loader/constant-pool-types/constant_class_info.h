@@ -10,6 +10,7 @@
 #include "constant_pool_item.h"
 
 class constant_class_info : public constant_pool_item {
+public:
     u2 name_index;
 };
 

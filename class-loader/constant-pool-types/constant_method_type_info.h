@@ -9,6 +9,7 @@
 #include "../../vm/base/def.h"
 
 class constant_method_type_info : public constant_pool_item {
+public:
     u2 descriptor_index;
 };
 

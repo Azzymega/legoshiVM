@@ -9,7 +9,8 @@
 #include "constant_pool_item.h"
 #include "../../vm/base/def.h"
 
-struct constant_utf8_info : public constant_pool_item {
+class constant_utf8_info : public constant_pool_item {
+public:
     u2 length;
     std::string* string;
 };
