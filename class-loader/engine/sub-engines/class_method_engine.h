@@ -10,9 +10,8 @@
 #include "class_attribute_engine.h"
 
 class class_method_engine : public abstract_engine {
-private:
-    class_attribute_engine class_attribute_engine;
 public:
+    class_attribute_engine class_attribute_engine;
     abstract_data * perform_analyzing(loader *loader) override;
 };
 

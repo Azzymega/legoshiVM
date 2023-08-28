@@ -11,9 +11,11 @@
 #include "sub-engines/class_mt_engine.h"
 #include "sub-engines/class_field_engine.h"
 #include "sub-engines/class_method_engine.h"
+#include "sub-engines/class_interface_engine.h"
 
 class class_machine : public abstract_engine{
 private:
+    class_interface_engine class_interface_engine;
     class_field_engine class_field_engine;
     class_method_engine class_method_engine;
     class_attribute_engine class_attribute_engine;

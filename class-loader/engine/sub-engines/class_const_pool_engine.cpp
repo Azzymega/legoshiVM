@@ -11,8 +11,10 @@ abstract_data *class_const_pool_engine::perform_analyzing(loader *loader) {
     data->resolve_constant_pool_size(const_pool_size);
     const_pool_item_engine.size = &data->constant_pool_length;
     for (int i = 0; i < data->constant_pool_length; ++i) {
-        data->append_constant_pool_item(
-                static_cast<constant_pool_item *>(this->const_pool_item_engine.perform_analyzing(loader)));
+        constant_pool_item* item = static_cast<constant_pool_item *>(this->const_pool_item_engine.perform_analyzing(loader));
+        if (item != nullptr){
+            data->constant_pool.push_back(item);
+        }
     }
     return data;
 }

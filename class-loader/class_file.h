@@ -9,6 +9,8 @@
 #include <vector>
 #include "../vm/base/def.h"
 #include "constant-pool-types/constant_pool_item.h"
+#include "field-method/field.h"
+#include "field-method/methods.h"
 
 class class_file : public abstract_data{
 public:
@@ -23,11 +25,11 @@ public:
     u2 interfaces_count;
     std::vector<u2> interfaces;
     u2 fields_count;
-    //field_info fields[fields_count];
+    std::vector<field> fields;
     u2 methods_count;
-    //method_info methods[methods_count];
+    std::vector<methods> methods;
     u2 attributes_count;
-    //attribute_info attributes[attribute_count];
+    std::vector<attribute*> attributes;
 };
 
 

@@ -59,4 +59,4 @@ add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
         class-loader/engine/sub-engines/class_field_engine.cpp
         class-loader/engine/sub-engines/class_field_engine.h
         class-loader/engine/sub-engines/class_method_engine.cpp
-        class-loader/engine/sub-engines/class_method_engine.h)
+        class-loader/engine/sub-engines/class_method_engine.h class-loader/engine/sub-engines/class_interface_engine.cpp class-loader/engine/sub-engines/class_interface_engine.h class-loader/field-method/interface.cpp class-loader/field-method/interface.h)

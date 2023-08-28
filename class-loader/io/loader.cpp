@@ -33,27 +33,26 @@ void loader::load_bytecode(void *dest, u4 length) {
 }
 
 u1 loader::init_u1() {
-    u1 temp = 0;
-    memcpy(&temp,&bytecode[loaded_bytes],sizeof(u1));
+    u1 temp[1];
+    temp[0] = bytecode[loaded_bytes];
     loaded_bytes += sizeof(u1);
-    if (temp > 200){
-        return temp >> 4;
-    }
-    else{
-        return temp;
-    }
+    return temp[0];
 }
 
 u2 loader::init_u2() {
-    u2 temp = 0;
-    memcpy(&temp,&bytecode[loaded_bytes],sizeof(u2));
+    u2 temp[2];
+    temp[0] = bytecode[loaded_bytes];
+    temp[1] = bytecode[loaded_bytes+1];
     loaded_bytes += sizeof(u2);
-    return temp >> 8;
+    return temp[0] >> 8 | temp[1];
 }
 
 u4 loader::init_u4() {
-    u4 temp = 0;
-    memcpy(&temp,&bytecode[loaded_bytes],sizeof(u4));
+    u2 temp[4];
+    temp[0] = bytecode[loaded_bytes];
+    temp[1] = bytecode[loaded_bytes+1];
+    temp[2] = bytecode[loaded_bytes+2];
+    temp[3] = bytecode[loaded_bytes+3];
     loaded_bytes += sizeof(u4);
-    return temp >> 16;
+    return temp[0] >> 24 | temp[1] >> 16 | temp[2] >> 8 | temp[3];
 }

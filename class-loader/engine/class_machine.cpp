@@ -5,6 +5,7 @@
 #include "class_machine.h"
 #include "../class_file.h"
 #include "../utility/class_constant_pool.h"
+#include "../field-method/interface.h"
 
 abstract_data *class_machine::perform_analyzing(loader *loader) {
     auto* file = new class_file();
@@ -15,6 +16,28 @@ abstract_data *class_machine::perform_analyzing(loader *loader) {
     auto* class_constant_pool = static_cast<class class_constant_pool*>(class_const_pool_engine.perform_analyzing(loader));
     file->constant_pool_count = class_constant_pool->constant_pool_length;
     file->constant_pool = class_constant_pool->constant_pool;
+    this->class_attribute_engine.constant_pool = &file->constant_pool;
+    this->class_method_engine.class_attribute_engine.constant_pool = &file->constant_pool;
+    this->class_field_engine.class_attribute_engine.constant_pool = &file->constant_pool;
+    auto* next_data = static_cast<class_metadata *>(class_mt_engine.perform_second_analyzing(loader));
+    file->access_flags = next_data->access_flags;
+    file->this_class = next_data->this_class;
+    file->super_class = next_data->super_class;
+    auto* interface_data = static_cast<interface*>(class_interface_engine.perform_analyzing(loader));
+    file->interfaces_count = interface_data->interface_count;
+    file->interfaces = interface_data->interface_indexes;
+    file->fields_count = loader->init_u2();
+    for (int i = 0; i < file->fields_count; ++i) {
+        file->fields.push_back(*static_cast<field*>(class_field_engine.perform_analyzing(loader)));
+    }
+    file->methods_count = loader->init_u2();
+    for (int i = 0; i < file->methods_count; ++i) {
+        file->methods.push_back(*static_cast<methods*>(class_method_engine.perform_analyzing(loader)));
+    }
+    file->attributes_count = loader->init_u2();
+    for (int i = 0; i < file->attributes_count; ++i) {
+        file->attributes.push_back(static_cast<attribute*>(class_attribute_engine.perform_analyzing(loader)));
+    }
     return file;
 }
 

@@ -15,7 +15,7 @@
 abstract_data *class_attribute_engine::perform_analyzing(loader *loader) {
     u2 attribute_name_index = loader->init_u2();
     u4 attribute_length = loader->init_u4();
-    switch (analyze_constant_pool_index(*static_cast<constant_utf8_info*>(constant_pool->at(attribute_name_index - 1))->string)) {
+    switch (analyze_constant_pool_index(static_cast<constant_utf8_info*>(constant_pool->at(attribute_name_index - 1))->string->c_str())) {
         case attributes::source_file:{
             auto* file = new class source_file();
             file->resolve_name(attribute_name_index);
