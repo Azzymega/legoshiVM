@@ -9,4 +9,5 @@ lvm init_lvm::init_runtime(const class_file& file) {
     runtime.thread_counter = 0;
     runtime.memory_controller = memory();
     runtime.memory_controller.assemblies.push_back(file);
+    return runtime;
 }

@@ -19,7 +19,7 @@ void jdirect_call_manager::execute_call(const std::string& library_name, const s
 
 void jdirect_call_manager::pre_def_call(std::string name, char *data, u4 arg_size) {
     if (name == "out"){
-        for (int i = 0; i < arg_size; ++i) {
+        for (size_t i = 0; i < arg_size; ++i) {
             std::cout << data[i];
             std::cout << std::endl;
         }
