@@ -20,8 +20,8 @@ private:
 public:
     void set_bytes_amount(u4 bytes);
     u4 return_bytes() const;
-    explicit loader(std::string path);
-    void load();
+    explicit loader();
+    void load(std::string class_path);
     void load_bytecode(void* dest, u4 length); // legacy, unsafe
     u1 init_u1();
     u2 init_u2();

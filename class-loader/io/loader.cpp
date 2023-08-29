@@ -6,15 +6,17 @@
 #include <utility>
 #include "loader.h"
 
-loader::loader(std::string path) {
+loader::loader() {
     this->loaded_bytes = 0;
-    this->path = std::move(path);
 }
 
-void loader::load() {
+void loader::load(std::string class_path) {
+    this->loaded_bytes = 0;
+    this->bytecode.clear();
+    this->path = class_path;
     this->load_stream.open(path,std::ios::binary);
     if (load_stream.is_open()){
-        std::cout << "Stream Opened" << std::endl;
+        std::cout << "[LOADING] Loader opened. Reading Class file." << std::endl;
         while (!load_stream.eof()){
             uint8_t data;
             load_stream >> data >> std::noskipws;
@@ -23,7 +25,7 @@ void loader::load() {
         load_stream.close();
     }
     else {
-        std::cout << "Loader failed to load" << std::endl;
+        std::cout << "[ERROR] Loader failed to load" << std::endl;
     }
 }
 

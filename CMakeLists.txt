@@ -5,6 +5,8 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS -static-libstdc++)
 set(CMAKE_CXX_FLAGS -Wall)
+set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ -lwsock32 -lws2_32 ${CMAKE_CSS_STANDARD_LIBRARIES}")
+set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,--no-whole-archive")
 
 add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
         vm/type-system/basic_primitive_type.h vm/type-system/types/value/byte.cpp
@@ -59,4 +61,4 @@ add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
         class-loader/engine/sub-engines/class_field_engine.cpp
         class-loader/engine/sub-engines/class_field_engine.h
         class-loader/engine/sub-engines/class_method_engine.cpp
-        class-loader/engine/sub-engines/class_method_engine.h class-loader/engine/sub-engines/class_interface_engine.cpp class-loader/engine/sub-engines/class_interface_engine.h class-loader/field-method/interface.cpp class-loader/field-method/interface.h)
+        class-loader/engine/sub-engines/class_method_engine.h class-loader/engine/sub-engines/class_interface_engine.cpp class-loader/engine/sub-engines/class_interface_engine.h class-loader/field-method/interface.cpp class-loader/field-method/interface.h vm/base/memory.cpp vm/base/memory.h vm/base/memory/load_lvm_frames.cpp vm/base/memory/load_lvm_frames.h vm/base/thread.cpp vm/base/thread.h vm/base/memory/init_lvm.cpp vm/base/memory/init_lvm.h vm/native_calls/jdirect_call_manager.cpp vm/native_calls/jdirect_call_manager.h vm/native_calls/jvm_types.h)

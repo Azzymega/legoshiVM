@@ -5,14 +5,20 @@
 #include "class-loader/engine/class_machine.h"
 #include "class-loader/constant-pool-types/constant_utf8_info.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    loader ld = loader("Main.class");
-    ld.load();
-    class_file file = class_file();
-    class_machine machine = class_machine();
-    file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
-    std::cout<< static_cast<constant_utf8_info*>(file.constant_pool[3])->string->c_str()<<std::endl;
-    std::cout<< static_cast<constant_utf8_info*>(file.constant_pool[32])->string->c_str()<<std::endl;
+    loader ld;
+    std::cout << "LegoshiVM" << std::endl;
+    if (argv[1] == nullptr){
+        std::cout << "[ERROR] Class file is missing" << std::endl;
+    }
+    else {
+        std::cout << "[LOADING] Initializing JVM" << std::endl;
+        ld.load(argv[1]);
+        class_file file = class_file();
+        class_machine machine = class_machine();
+        file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
+        std::cout << "[LOADING] JVM initialized. Class loaded." << std::endl;
+    }
     return 0;
 }
