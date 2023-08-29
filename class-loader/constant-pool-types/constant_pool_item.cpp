@@ -3,3 +3,7 @@
 //
 
 #include "constant_pool_item.h"
+
+void constant_pool_item::dummy() {
+
+}

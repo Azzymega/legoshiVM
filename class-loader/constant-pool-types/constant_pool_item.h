@@ -9,7 +9,7 @@
 #include "../utility/abstract_data.h"
 
 class constant_pool_item : public abstract_data {
-
+virtual void dummy();
 };
 
 

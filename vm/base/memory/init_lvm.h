@@ -10,7 +10,7 @@
 
 class init_lvm {
 public:
-    lvm init_runtime(const class_file& file);
+    static lvm init_runtime(const class_file& file);
 };
 
 
