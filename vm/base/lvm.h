@@ -17,6 +17,7 @@
 
 class lvm {
 public:
+    bool is_superclass_loaded;
     u4 thread_counter;
     loader ld;
     class_machine machine;

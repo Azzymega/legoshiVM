@@ -11,6 +11,7 @@
 class init_lvm {
 public:
     static lvm init_runtime(const class_file& file);
+    static void dependency_inject(lvm* runtime, class_file file);
 };
 
 

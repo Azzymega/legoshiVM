@@ -23,15 +23,6 @@ int main(int argc, char* argv[])
         lvm main_runtime = init_lvm::init_runtime(file);
         std::cout << "[LOADING] JVM initialized. Main class loaded." << std::endl;
         std::cout << "[LOADING] Loading additional classes." << std::endl;
-        std::cout << "[LOADING] Loading additional classes." << std::endl;
-        for (int i = 0; i < file.constant_pool_count; ++i) {
-            auto* path = dynamic_cast<constant_utf8_info*>(file.constant_pool[i]);
-            if (path) {
-                ld.load(*path->string+".class");
-                file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
-                main_runtime.memory_controller.assemblies.push_back(file);
-            }
-        }
     }
     return 0;
 }
