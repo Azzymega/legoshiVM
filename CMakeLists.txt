@@ -3,12 +3,9 @@ project(legoshiVM)
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS -static-libstdc++)
 set(CMAKE_CXX_FLAGS -Wall)
-set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ -lwsock32 -lws2_32 ${CMAKE_CSS_STANDARD_LIBRARIES}")
-set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,--no-whole-archive")
-
-add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
+set(CMAKE_CXX_FLAGS -static)
+add_library(lvm STATIC vm/type-system/basic_primitive_type.cpp
         vm/type-system/basic_primitive_type.h vm/type-system/types/value/byte.cpp
         vm/type-system/types/value/byte.h vm/base/def.h vm/type-system/types/value/short.cpp
         vm/type-system/types/value/short.h vm/type-system/types/value/int.cpp
@@ -61,4 +58,15 @@ add_executable(legoshiVM main.cpp vm/type-system/basic_primitive_type.cpp
         class-loader/engine/sub-engines/class_field_engine.cpp
         class-loader/engine/sub-engines/class_field_engine.h
         class-loader/engine/sub-engines/class_method_engine.cpp
-        class-loader/engine/sub-engines/class_method_engine.h class-loader/engine/sub-engines/class_interface_engine.cpp class-loader/engine/sub-engines/class_interface_engine.h class-loader/field-method/interface.cpp class-loader/field-method/interface.h vm/base/memory.cpp vm/base/memory.h vm/base/memory/load_lvm_frames.cpp vm/base/memory/load_lvm_frames.h vm/base/thread.cpp vm/base/thread.h vm/base/memory/init_lvm.cpp vm/base/memory/init_lvm.h vm/native_calls/jdirect_call_manager.cpp vm/native_calls/jdirect_call_manager.h vm/native_calls/jvm_types.h)
+        class-loader/engine/sub-engines/class_method_engine.h class-loader/engine/sub-engines/class_interface_engine.cpp
+        class-loader/engine/sub-engines/class_interface_engine.h class-loader/field-method/interface.cpp
+        class-loader/field-method/interface.h vm/base/memory.cpp vm/base/memory.h vm/base/memory/load_lvm_frames.cpp
+        vm/base/memory/load_lvm_frames.h vm/base/thread.cpp vm/base/thread.h vm/base/memory/init_lvm.cpp
+        vm/base/memory/init_lvm.h vm/native_calls/jdirect_call_manager.cpp vm/native_calls/jdirect_call_manager.h
+        vm/native_calls/jvm_types.h vm/base/memory/vm_pool.cpp vm/base/memory/vm_pool.h vm/base/memory/name_and_type.cpp
+        vm/base/memory/name_and_type.h vm/base/memory/init_vm_pool_engine.cpp vm/base/memory/init_vm_pool_engine.h
+        vm/base/memory/init_method_engine.cpp vm/base/memory/init_method_engine.h)
+add_executable(legoshiVM main.cpp)
+add_executable(javap javap/javap_main.cpp javap/javap_main.h)
+target_link_libraries(legoshiVM PRIVATE lvm)
+target_link_libraries(javap PRIVATE lvm)

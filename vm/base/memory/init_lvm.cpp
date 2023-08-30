@@ -11,7 +11,7 @@ lvm init_lvm::init_runtime(const class_file& file) {
     runtime.thread_counter = 0;
     runtime.memory_controller = memory();
     runtime.memory_controller.assemblies.push_back(file);
-    dependency_inject(&runtime, file);
+    //dependency_inject(&runtime, file);
     return runtime;
 }
 
@@ -19,7 +19,7 @@ void init_lvm::dependency_inject(lvm *runtime, class_file file) { // переп�
     for (int i = 0; i < file.constant_pool_count; ++i) {
         auto* path = dynamic_cast<constant_utf8_info*>(file.constant_pool[i]);
         if (path) {
-            if (!runtime->is_superclass_loaded || path->length >4 && path->string->at(4) == '/'){
+            if (path->length >4 && path->string->at(4) == '/'){
                 char x[] = {"java/lang/Object"};
                 char s[path->string->size()+1];
                 for (int j = 0; j < path->string->size(); ++j) {
@@ -34,6 +34,9 @@ void init_lvm::dependency_inject(lvm *runtime, class_file file) { // переп�
                     else{
                         right = false;
                     }
+                }
+                if (right && runtime->is_superclass_loaded){
+                    continue;
                 }
                 if (right){
                     runtime->is_superclass_loaded = true;

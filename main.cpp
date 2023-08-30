@@ -16,11 +16,14 @@ int main(int argc, char* argv[])
     }
     else {
         std::cout << "[LOADING] Initializing JVM" << std::endl;
-        ld.load(argv[1]);
-        class_file file = class_file();
-        class_machine machine = class_machine();
-        file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
-        lvm main_runtime = init_lvm::init_runtime(file);
+        lvm main_runtime;
+        for (int i = 1; i < argc; ++i) {
+            ld.load(argv[i]);
+            class_file file = class_file();
+            class_machine machine = class_machine();
+            file = *static_cast<class_file*>(machine.perform_analyzing(&ld));
+            main_runtime.memory_controller.assemblies.push_back(file);
+        }
         std::cout << "[LOADING] JVM initialized. Main class loaded." << std::endl;
         std::cout << "[LOADING] Loading additional classes." << std::endl;
     }
