@@ -1,6 +1,8 @@
-//
-// Created by Danil on 25.08.2023.
-//
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+ */
 
 #ifndef JET_EXCEPTION_TABLE_H
 #define JET_EXCEPTION_TABLE_H

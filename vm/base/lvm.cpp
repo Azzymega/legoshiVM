@@ -1,7 +1,8 @@
-//
-// Created by Danil on 27.08.2023.
-//
-
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
 #include "lvm.h"
 #include "../../class-loader/constant-pool-types/constant_method_ref_info.h"
 #include "../../class-loader/constant-pool-types/constant_class_info.h"

@@ -1,6 +1,9 @@
-//
-// Created by Danil on 27.08.2023.
-//
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+ */
+
 
 #ifndef LEGOSHIVM_CONSTANT_POOL_ITEM_H
 #define LEGOSHIVM_CONSTANT_POOL_ITEM_H

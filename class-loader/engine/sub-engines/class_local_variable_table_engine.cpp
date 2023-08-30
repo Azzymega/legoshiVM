@@ -1,6 +1,8 @@
-//
-// Created by Danil on 28.08.2023.
-//
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+ */
 
 #include "class_local_variable_table_engine.h"
 #include "../../core/local_variable_table.h"

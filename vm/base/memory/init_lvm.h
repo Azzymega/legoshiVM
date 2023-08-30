@@ -1,7 +1,8 @@
-//
-// Created by Danil on 29.08.2023.
-//
-
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
 #ifndef LEGOSHIVM_INIT_LVM_H
 #define LEGOSHIVM_INIT_LVM_H
 

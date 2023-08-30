@@ -1,7 +1,8 @@
-//
-// Created by Danil on 29.08.2023.
-//
-
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
 #include "load_lvm_frames.h"
 
 method load_lvm_frames::produce_frame(const methods& raw_method) {

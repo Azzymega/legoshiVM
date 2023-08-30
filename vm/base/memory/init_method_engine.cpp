@@ -1,7 +1,8 @@
-//
-// Created by Danil on 30.08.2023.
-//
-
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
 #include "init_method_engine.h"
 
 method* init_method_engine::init_method(const methods& mt, class_file* file) {

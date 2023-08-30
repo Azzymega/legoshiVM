@@ -1,3 +1,9 @@
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
+
 #include <iostream>
 #include "class-loader/io/loader.h"
 #include "class-loader/engine/sub-engines/class_mt_engine.h"

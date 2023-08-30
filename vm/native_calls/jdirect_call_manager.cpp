@@ -1,15 +1,17 @@
-//
-// Created by Danil on 29.08.2023.
-//
-
+/*
+ * PROJECT:     LegoshiVM
+ * LICENSE:     GPL - See COPYING in the top level directory
+ * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
+*/
 #include <iostream>
 #include "jdirect_call_manager.h"
 
 void jdirect_call_manager::load_library(const std::string& library_name) {
-    this->library = LoadLibrary(library_name.c_str());
+    /*this->library = LoadLibrary(library_name.c_str());
     if (!library){
         std::cout << "[ERROR] Native call fails" << std::endl;
     }
+     */
 }
 
 void jdirect_call_manager::execute_call(const std::string& library_name, const std::string &proc_name, void *return_address,
