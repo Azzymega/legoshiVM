@@ -67,6 +67,7 @@ add_library(lvm STATIC src/lvm/type-system/basic_primitive_type.cpp
         src/lvm/native_calls/jvm_types.h src/lvm/base/memory/vm_pool.cpp src/lvm/base/memory/vm_pool.h src/lvm/base/memory/name_and_type.cpp
         src/lvm/base/memory/name_and_type.h src/lvm/base/memory/init_vm_pool_engine.cpp src/lvm/base/memory/init_vm_pool_engine.h
         src/lvm/base/memory/init_method_engine.cpp src/lvm/base/memory/init_method_engine.h src/lvm/interpretor/interpreter.cpp src/lvm/interpretor/interpretor.h)
+add_executable(javac src/javac/main.cpp src/javac/jlexer.c src/javac/jlexer.h)
 add_executable(java src/java/main.cpp)
 add_executable(javap src/javap/javap_main.cpp src/javap/javap_main.h)
 target_link_libraries(class_ldr PRIVATE lvm)
