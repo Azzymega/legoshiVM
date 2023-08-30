@@ -51,7 +51,7 @@ void interpreter::interpret(method *frame, thread *thread, lvm* runtime) {
     }
     else {
         if (frame->name == "out"){
-            std::cout << *dynamic_cast<constant_utf8_info *>(frame->operands.top())->string;
+            std::cout << *dynamic_cast<constant_utf8_info *>(frame->operands.top())->string << std::endl;
         }
     }
 }
