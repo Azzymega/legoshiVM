@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <string>
 #include "../../vm/base/def.h"
 #include "../utility/abstract_data.h"
 

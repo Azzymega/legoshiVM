@@ -5,7 +5,9 @@
 #include "class_machine.h"
 #include "../class_file.h"
 #include "../utility/class_constant_pool.h"
+#include "../../vm/base/lvm.h"
 #include "../field-method/interface.h"
+#include "../constant-pool-types/constant_utf8_info.h"
 
 abstract_data *class_machine::perform_analyzing(loader *loader) {
     auto* file = new class_file();
@@ -37,6 +39,13 @@ abstract_data *class_machine::perform_analyzing(loader *loader) {
     file->attributes_count = loader->init_u2();
     for (int i = 0; i < file->attributes_count; ++i) {
         file->attributes.push_back(static_cast<attribute*>(class_attribute_engine.perform_analyzing(loader)));
+    }
+    file->name = lvm::return_class_name(file->this_class,file);
+    for (int i = 0; i < file->methods_count; ++i) {
+        file->methods[i].name = *static_cast<constant_utf8_info*>(file->constant_pool[file->methods[i].name_index-1])->string;
+    }
+    for (int i = 0; i < file->fields_count; ++i) {
+        file->fields[i].name = *static_cast<constant_utf8_info*>(file->constant_pool[file->fields[i].name_index-1])->string;
     }
     return file;
 }

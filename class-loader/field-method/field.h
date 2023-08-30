@@ -7,12 +7,14 @@
 
 
 #include <vector>
+#include <string>
 #include "../../vm/base/def.h"
 #include "../utility/abstract_data.h"
 #include "../attributes/attribute.h"
 
 class field : public abstract_data {
 public:
+    std::string name;
     u2 access_flags;
     u2 name_index;
     u2 signature_index;

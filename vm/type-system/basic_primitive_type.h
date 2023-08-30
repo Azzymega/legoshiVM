@@ -7,7 +7,7 @@
 
 
 class basic_primitive_type {
-
+    virtual void dummy();
 };
 
 

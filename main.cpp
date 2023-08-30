@@ -6,6 +6,7 @@
 #include "class-loader/constant-pool-types/constant_utf8_info.h"
 #include "vm/base/lvm.h"
 #include "vm/base/memory/init_lvm.h"
+#include "vm/interpretor/interpretor.h"
 
 int main(int argc, char* argv[])
 {
@@ -26,6 +27,11 @@ int main(int argc, char* argv[])
         }
         std::cout << "[LOADING] JVM initialized. Main class loaded." << std::endl;
         std::cout << "[LOADING] Loading additional classes." << std::endl;
+        std::cout << "[LOADING] Initializing interpreter." << std::endl;
+        main_runtime.init_first_thread();
+        interpreter::interpret(&main_runtime.threads.top()->frame_stack.top(),main_runtime.threads.top(),&main_runtime);
     }
+    std::cout << "[LOADING] Interpreter shutdown." << std::endl;
+    std::cout << "[LOADING] JVM shutdown." << std::endl;
     return 0;
 }

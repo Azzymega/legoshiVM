@@ -12,4 +12,12 @@ typedef uint32_t u4;
 typedef uint64_t u8;
 typedef wchar_t uc2;
 
+enum jvm_opcodes {
+    aload_0 = 42,
+    invokespecial = 183,
+    ldc = 18,
+    invokestatic = 184,
+    return_op = 177
+};
+
 #endif //LEGOSHIVM_DEF_H

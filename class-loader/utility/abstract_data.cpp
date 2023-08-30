@@ -3,3 +3,7 @@
 //
 
 #include "abstract_data.h"
+
+void abstract_data::dummy() {
+
+}

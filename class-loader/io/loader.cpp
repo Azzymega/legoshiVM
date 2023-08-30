@@ -16,7 +16,7 @@ void loader::load(std::string class_path) {
     this->path = class_path;
     this->load_stream.open(path,std::ios::binary);
     if (load_stream.is_open()){
-        std::cout << "[LOADING] Loader opened. Reading Class file." << std::endl;
+        std::cout << "[LOADING] Loader opened. Reading "<< class_path <<"." << std::endl;
         while (!load_stream.eof()){
             uint8_t data;
             load_stream >> data >> std::noskipws;

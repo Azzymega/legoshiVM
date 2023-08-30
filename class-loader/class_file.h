@@ -14,6 +14,7 @@
 
 class class_file : public abstract_data{
 public:
+    std::string name;
     u4 magic;
     u2 minor_version;
     u2 major_version;

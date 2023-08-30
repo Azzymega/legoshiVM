@@ -20,7 +20,7 @@ vm_pool init_vm_pool_engine::init_pool(class_file file) {
 
 void init_vm_pool_engine::init_base_info(class_file *file, vm_pool *pool) {
     for (int i = 0; i < file->methods_count; ++i) {
-        pool->methods.push_back(init_method_engine::init_method(file->methods[i]));
+        pool->methods.push_back(*init_method_engine::init_method(file->methods[i],file));
     }
     for (int i = 0; i < file->interfaces_count; ++i) {
         pool->interfaces.push_back(file->interfaces[i]);

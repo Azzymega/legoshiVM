@@ -22,7 +22,10 @@ public:
     loader ld;
     class_machine machine;
     memory memory_controller;
-    std::stack<thread> threads;
+    std::stack<thread*> threads;
+    static std::string return_class_name(u4 class_index, class_file *cplink);
+    static method *methodref_check(u2 index, class_file *cplink, lvm *currrent_runtime);
+    void init_first_thread();
 };
 
 

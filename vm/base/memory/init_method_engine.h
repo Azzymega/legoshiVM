@@ -11,7 +11,7 @@
 
 class init_method_engine {
 public:
-    static method init_method(const methods& mt);
+    static method *init_method(const methods &mt, class_file *file);
 };
 
 

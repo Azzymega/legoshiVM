@@ -3,3 +3,7 @@
 //
 
 #include "basic_primitive_type.h"
+
+void basic_primitive_type::dummy() {
+
+}
