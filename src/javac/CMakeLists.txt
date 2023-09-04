@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+project(javac)
+set(CMAKE_CXX_FLAGS "/Zi")
+set(CMAKE_CXX_FLAGS "/EHsc")
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_executable(javac core/main.cpp io/ioService.cpp tokens/lexMachine.cpp)

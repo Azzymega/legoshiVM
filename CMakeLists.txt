@@ -64,7 +64,7 @@ add_library(lvm SHARED src/class-loader/class_file.cpp src/class-loader/class_fi
         src/lvm/native_calls/jvm_types.h src/lvm/base/memory/vm_pool.cpp src/lvm/base/memory/vm_pool.h src/lvm/base/memory/name_and_type.cpp
         src/lvm/base/memory/name_and_type.h src/lvm/base/memory/init_vm_pool_engine.cpp src/lvm/base/memory/init_vm_pool_engine.h
         src/lvm/base/memory/init_method_engine.cpp src/lvm/base/memory/init_method_engine.h src/lvm/interpretor/interpreter.cpp src/lvm/interpretor/interpretor.h)
-add_executable(javac src/javac/main.cpp)
+add_subdirectory(src/javac)
 add_executable(java src/java/main.cpp)
 add_executable(javap src/javap/javap_main.cpp src/javap/javap_main.h)
 add_executable(mainTest test/mainTest.cpp)
