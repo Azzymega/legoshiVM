@@ -2,10 +2,8 @@ cmake_minimum_required(VERSION 3.25)
 project(LegoshiVM)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS -Wall)
-set(CMAKE_CXX_FLAGS -O2)
-set(CMAKE_CXX_FLAGS -static)
-add_library(class_ldr STATIC src/class-loader/class_file.cpp src/class-loader/class_file.h
+set(CMAKE_CXX_FLAGS "/EHsc")
+add_library(lvm SHARED src/class-loader/class_file.cpp src/class-loader/class_file.h
         src/class-loader/core/tags.h src/class-loader/core/flags.h src/class-loader/constant-pool-types/constant_class_info.h
         src/class-loader/constant-pool-types/constant_double_info.h src/class-loader/constant-pool-types/constant_field_ref_info.h
         src/class-loader/constant-pool-types/constant_float_info.h src/class-loader/constant-pool-types/constant_integer_info.h
@@ -48,8 +46,7 @@ add_library(class_ldr STATIC src/class-loader/class_file.cpp src/class-loader/cl
         src/class-loader/engine/sub-engines/class_method_engine.cpp
         src/class-loader/engine/sub-engines/class_method_engine.h src/class-loader/engine/sub-engines/class_interface_engine.cpp
         src/class-loader/engine/sub-engines/class_interface_engine.h src/class-loader/field-method/interface.cpp
-        src/class-loader/field-method/interface.h)
-add_library(lvm STATIC src/lvm/type-system/basic_primitive_type.cpp
+        src/class-loader/field-method/interface.h src/lvm/type-system/basic_primitive_type.cpp
         src/lvm/type-system/basic_primitive_type.h src/lvm/type-system/types/value/byte.cpp
         src/lvm/type-system/types/value/byte.h src/lvm/base/def.h src/lvm/type-system/types/value/short.cpp
         src/lvm/type-system/types/value/short.h src/lvm/type-system/types/value/int.cpp
@@ -67,11 +64,10 @@ add_library(lvm STATIC src/lvm/type-system/basic_primitive_type.cpp
         src/lvm/native_calls/jvm_types.h src/lvm/base/memory/vm_pool.cpp src/lvm/base/memory/vm_pool.h src/lvm/base/memory/name_and_type.cpp
         src/lvm/base/memory/name_and_type.h src/lvm/base/memory/init_vm_pool_engine.cpp src/lvm/base/memory/init_vm_pool_engine.h
         src/lvm/base/memory/init_method_engine.cpp src/lvm/base/memory/init_method_engine.h src/lvm/interpretor/interpreter.cpp src/lvm/interpretor/interpretor.h)
-add_executable(javac src/javac/main.cpp src/javac/jlexer.c src/javac/jlexer.h)
+add_executable(javac src/javac/main.cpp)
 add_executable(java src/java/main.cpp)
 add_executable(javap src/javap/javap_main.cpp src/javap/javap_main.h)
-target_link_libraries(class_ldr PRIVATE lvm)
+add_executable(mainTest test/mainTest.cpp)
 target_link_libraries(java PRIVATE lvm)
 target_link_libraries(javap PRIVATE lvm)
-target_link_libraries(java PRIVATE class_ldr)
-target_link_libraries(javap PRIVATE class_ldr)
+target_link_libraries(mainTest PRIVATE lvm)

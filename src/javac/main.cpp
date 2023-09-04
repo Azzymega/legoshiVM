@@ -4,8 +4,7 @@
  * PROGRAMMER:  Maltsev Daniil <brickexberiment@lenta.ru>
 */
 
-#include "jlexer.h"
 
 int main(){
-    return yylex();
+    return 0;
 }

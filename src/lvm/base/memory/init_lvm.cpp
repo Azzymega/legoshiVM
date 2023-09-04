@@ -17,7 +17,7 @@ lvm init_lvm::init_runtime(const class_file& file) {
 }
 
 void init_lvm::dependency_inject(lvm *runtime, class_file file) { // переписать полностью этот ужас!!!
-    for (int i = 0; i < file.constant_pool_count; ++i) {
+    /*for (int i = 0; i < file.constant_pool_count; ++i) {
         auto* path = dynamic_cast<constant_utf8_info*>(file.constant_pool[i]);
         if (path) {
             if (path->length >4 && path->string->at(4) == '/'){
@@ -49,6 +49,5 @@ void init_lvm::dependency_inject(lvm *runtime, class_file file) { // переп�
                 dependency_inject(runtime,filex);
                 std::cout << "[LOADING] Loading additional " << *path->string << " dependency." << std::endl;
             }
-        }
-    }
+     */  
 }
