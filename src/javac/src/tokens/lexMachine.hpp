@@ -14,6 +14,8 @@ struct constLexData {
     std::string keywordRegex = "assert|break|case|catch|char|class|const|continue|default|do|else|enum|extends|final|finally|for|if|goto|implements|import|instanceof|interface|native|new|package|private|protected|public|return|static|strictfp|super|switch|synchronized|this|throw|throws|transient|try|void|volatile|while";
     std::string integerRegex = "[0-9]+";
     std::string internalsStartRegex = "\\(|\\{|\\[";
+    std::string paramsStartRegex = "\\(";
+    std::string paramsEndRegex = "\\)";
     std::string internalsEndsRegex = "\\)|\\}|\\]";
     std::string indentifierRegex = "[a-zA-Z_][a-zA-Z_0-9]*";
     std::string operationRegex = "[+\\-*/><!;,=(){}\\[\\]]";

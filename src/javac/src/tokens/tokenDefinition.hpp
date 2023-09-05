@@ -15,5 +15,7 @@ enum tokenType {
     internals_starts,
     internals_ends,
     logical_operation,
-    operation
+    operation,
+    paramsStart,
+    paramsEnd
 };

@@ -17,8 +17,9 @@ private:
     token methodType;
     token methodName;
     std::vector<token> methodParams;
-    std::vector<abstractCodeStatement*> codeStatements;
+    std::vector<token> codeStatements;
     code_attribute code;
+    void initCode(ClassFile *file, method_t* mt);
 public:
     void initStatement (std::vector<token> statement) override;
     void translateIntoBinary(ClassFile* file) override;

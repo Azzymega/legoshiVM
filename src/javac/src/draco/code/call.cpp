@@ -18,10 +18,9 @@ void call::initStatement(std::vector<token> statement)
             this->params.push_back(statement[i]);
         }
     }
-    
 }
 
-std::vector<u1> call::translateIntoBinary(ClassFile* file, method* method)
+std::vector<u1> call::translateIntoBinary(ClassFile* file, method_t* method)
 {
     std::vector<u1> bytecode;
     cpinfo info;
@@ -45,6 +44,7 @@ std::vector<u1> call::translateIntoBinary(ClassFile* file, method* method)
         file->constantPool.push_back(info);
         paramsIndexes.push_back(file->constantPoolAmount);
         file->constantPoolAmount++;
+    }
     for (size_t i = 0; i < paramsIndexes.size(); i++)
     {
         bytecode.push_back(18);// add bytecode enum

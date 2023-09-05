@@ -20,7 +20,7 @@ void field::translateIntoBinary(ClassFile *file)
 {
     file->FieldCount++;
     field_t fl = field_t();
-    fl.access_flags = fieldFlags::ACC_PUBLIC;
+    fl.access_flags = fieldFlags::ACC_PUBLICF;
     cpinfo info;
     info.tag = cptype::CONSTANT_Utf8;
     for (size_t i = 0; i < fieldName.internals.size(); i++)

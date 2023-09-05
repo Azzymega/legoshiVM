@@ -14,5 +14,5 @@ private:
     token value;
 public:
     void initStatement(std::vector<token> statement) override;
-    std::vector<u1> translateIntoBinary(ClassFile* file, method* method) override;
+    std::vector<u1> translateIntoBinary(ClassFile* file, method_t* method) override;
 };

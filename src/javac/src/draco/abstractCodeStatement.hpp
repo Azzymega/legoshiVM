@@ -14,5 +14,5 @@
 class abstractCodeStatement {
 public:
     virtual void initStatement(std::vector<token> statement) = 0;
-    virtual std::vector<u1> translateIntoBinary(ClassFile* file, method* method) = 0;
+    virtual std::vector<u1> translateIntoBinary(ClassFile* file, method_t* method) = 0;
 };

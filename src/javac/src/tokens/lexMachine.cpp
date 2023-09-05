@@ -7,8 +7,6 @@
 
 void lexMachine::parseBytes(std::vector<u1> bytes)
 {
-    std::regex internalsStartRegex(this->internalData.internalsStartRegex);
-    std::regex internalsEndRegex(this->internalData.internalsEndsRegex);
     std::string token;
     for (std::size_t i = 0; i < bytes.size(); i++)
     {
@@ -79,11 +77,21 @@ void lexMachine::tokenize(std::vector<std::string> parserOutput)
     std::regex logicalRegex(this->internalData.logicRegex);
     std::regex flagsRegex(this->internalData.flagsRegex);
     std::regex massiveDeclRegex(this->internalData.massiveDeclRegex);
+    std::regex paramsStartRegex(this->internalData.paramsStartRegex);
+    std::regex paramsEndRegex(this->internalData.paramsEndRegex);
     for (std::size_t i = 0; i < parserOutput.size(); i++)
     {
         if (std::regex_search(parserOutput[i],massiveDeclRegex))
         {
             this->tokenizerOutput.push_back(token{tokenType::massiveDecl, parserOutput[i]});
+        }
+        else if (std::regex_search(parserOutput[i],paramsStartRegex))
+        {
+            this->tokenizerOutput.push_back(token{tokenType::paramsStart, parserOutput[i]});
+        }
+        else if (std::regex_search(parserOutput[i],paramsEndRegex))
+        {
+            this->tokenizerOutput.push_back(token{tokenType::paramsEnd, parserOutput[i]});
         }
         else if (std::regex_search(parserOutput[i],flagsRegex))
         {

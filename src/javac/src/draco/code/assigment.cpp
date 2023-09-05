@@ -13,7 +13,7 @@ void assigment::initStatement(std::vector<token> statement)
     this->value = statement[3];
 }
 
-std::vector<u1> assigment::translateIntoBinary(ClassFile* file, method* method)
+std::vector<u1> assigment::translateIntoBinary(ClassFile* file, method_t* method)
 {
     cpinfo info;
     info.tag = cptype::CONSTANT_Utf8;
@@ -29,5 +29,5 @@ std::vector<u1> assigment::translateIntoBinary(ClassFile* file, method* method)
         info.info.push_back(value.internals.at(i));
     }
     file->constantPool.push_back(info);
-    return std::vector<u1>; // fix
+    return std::vector<u1>(); // fix
 }

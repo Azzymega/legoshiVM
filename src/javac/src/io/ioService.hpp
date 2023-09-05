@@ -7,6 +7,7 @@
 #include <iostream>
 #include "../core/compilerTypes.hpp"
 #include <fstream>
+#include "../bytecodeStructure/classFileStructure.hpp"
 #include <vector>
 #include <string>
 
@@ -25,7 +26,7 @@ public:
      * @brief write function
      * write a class-file with a specified priviously place
      */
-    void write();
+    void write(ClassFile* file);
     /**
      * @brief read funtcion
      * read a file from selected location and return a byte array
